@@ -30,16 +30,44 @@
             cursor: pointer; /* Indicate it's clickable */
         }
 
-         /* --- AI Spaceship Style --- */
+         /* --- Removed AI Spaceship Style --- */
+        /*
         .spaceship {
             position: absolute;
-            color: #00FF00; /* Green spaceship */
-            font-size: 16px; /* Spaceship size */
+            color: #00FF00;
+            font-size: 16px;
             user-select: none;
             line-height: 1;
-            pointer-events: none; /* Spaceship is not interactive */
-            transform-origin: center center; /* Rotate around its center */
+            pointer-events: none;
+            transform-origin: center center;
         }
+        */
+
+        /* --- Ad Explainer Message Style --- */
+        #ad-explainer-message {
+            position: fixed; /* Keep it visible at the top */
+            top: 20px; /* Adjust vertical position */
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+            color: #FFFFFF; /* White text */
+            border: 2px solid #FFFFFF; /* White border */
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9em; /* Slightly smaller than main text */
+            z-index: 50; /* Ensure it's above the main content but below the alien message */
+            white-space: nowrap; /* Prevent wrapping if possible */
+            max-width: 90%; /* Limit width on smaller screens */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+         /* Allow wrapping on small screens if needed */
+         @media (max-width: 600px) {
+             #ad-explainer-message {
+                 white-space: normal;
+                 max-width: calc(100% - 40px); /* Take full width minus padding */
+             }
+         }
+
 
         /* --- Alien Message Overlay Style --- */
         #alien-message {
@@ -105,6 +133,7 @@
             position: relative; /* Ensure container is above asteroid field */
             z-index: 1; /* Ensure container is above asteroid field */
             background-color: #000000; /* Give container a solid background */
+             margin-top: 80px; /* Add space at the top for the ad message */
         }
 
         /* Headings */
@@ -150,7 +179,7 @@
         }
          .download-section p {
              margin-bottom: 20px; /* More space below text before buttons */
-            }
+         }
 
         /* Buttons Common Style */
         .button {
@@ -191,7 +220,7 @@
              background-color: #000000;
              color: #FFFFFF;
              border-color: #FFFFFF; /* Ensure border remains white on hover */
-            }
+         }
 
         /* Style for 'Coming Soon' buttons */
          .button.coming-soon {
@@ -200,23 +229,7 @@
              border-color: #AAAAAA; /* Greyed out border */
              cursor: default; /* Change cursor */
              pointer-events: none; /* Prevent clicks */
-            }
-
-         /* --- Locked Button Style --- */
-        .button.locked-button {
-             background-color: #1a1a1a; /* Darker grey */
-             color: #888888; /* Greyed out text */
-             border-color: #888888; /* Greyed out border */
-             cursor: not-allowed; /* Indicate it's not currently usable */
-             pointer-events: auto; /* Still allow click event listener */
-        }
-         .button.locked-button:hover,
-         .button.locked-button:focus {
-             background-color: #1a1a1a; /* Maintain dark grey on hover */
-             color: #888888; /* Maintain grey text on hover */
-             border-color: #888888; /* Maintain grey border on hover */
          }
-        /* You could add a lock icon here using ::before or a background image if desired */
 
 
         /* List for Requirements */
@@ -255,17 +268,17 @@
          a {
              color: #FFFFFF;
              text-decoration: underline;
-            }
+         }
          a:hover {
              text-decoration: none;
-            }
+         }
 
         /* Responsive adjustments */
         @media (max-width: 700px) { /* Adjusted breakpoint */
-             body {
-                 font-size: 9px; /* Slightly larger base */
-                 padding: 10px;
-                }
+              body {
+                  font-size: 9px; /* Slightly larger base */
+                  padding: 10px;
+              }
              /* Screenshots rule removed */
              /* .screenshots img { ... } */
              /* Stack all buttons on smaller screens */
@@ -273,18 +286,23 @@
                  display: block;
                  width: 80%;
                  margin: 12px auto; /* Adjust spacing */
-                }
-                h1 { font-size: 1.6em; }
-                h2 { font-size: 1.2em; }
+              }
+               h1 { font-size: 1.6em; }
+               h2 { font-size: 1.2em; }
+               /* Adjust container margin for the message on small screens */
+               .container {
+                    margin-top: 100px; /* More space if message wraps */
+               }
         }
     </style>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9029589014927489"
-     crossorigin="anonymous"></script>
-    </head>
+</head>
 <body>
 
     <div id="asteroid-field"></div>
+
+    <div id="ad-explainer-message">
+        We are sorry but we must add ads couse of low money but in game there isnt ads
+    </div>
 
     <div class="container">
 
@@ -294,17 +312,17 @@
         <div class="description">
             <h2>ABOUT</h2>
             <p>
-                Pilot your ship! Blast space rocks! Destroy enemy fighters! Grab power-ups! Get the high score! Pure pixel arcade action awaits in this classic shoot 'em up.
+                Blast space rocks! Grab power-ups! Get the high score! Pure pixel arcade action awaits in this classic shoot 'em up.
             </p>
         </div>
 
         <div class="download-section">
             <h2>PLAY GAME</h2>
             <p>VER 1.0 (APR 19 2025)</p>
-            <a href="game_html5/index.html" class="button try-button locked-button">
+            <a href="game_html5/index.html" class="button try-button">
                 TRY IN BROWSER
             </a>
-            <a href="downloads/Space_Rocks" class="button download-button locked-button" download>
+            <a href="http://ytsubme.io/2yCpkal" class="button download-button" download>
                 DOWNLOAD FOR WINDOWS
             </a>
             <a href="#" class="button download-button coming-soon">
@@ -315,15 +333,6 @@
             </a>
             </div>
 
-        <ins class="adsbygoogle"
-             style="display:block; text-align:center;" /* Added text-align center to style */
-             data-ad-client="ca-pub-9029589014927489"
-             data-ad-slot="9497850524"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
         <div class="requirements">
             <h2>SYSTEM REQS (DOWNLOAD)</h2>
             <ul>
@@ -337,7 +346,7 @@
         </div>
 
          <footer>
-             <p>(C) 2025 kitcapy</p>
+              <p>(C) 2025 kitcapy</p>
          </footer>
 
     </div>
@@ -347,11 +356,12 @@
         const numAsteroids = 30; // How many initial asteroids
         let asteroids = []; // Use 'let' because we'll modify this array
 
-        let spaceship = null; // Variable to hold the spaceship data
-        const spaceshipSpeed = 1.5; // Speed of the AI spaceship
-        const detectionRange = 200; // Distance for AI to consider targetting
-        const shootChance = 0.01; // Chance to shoot per frame when in range (1%)
-        const hitChance = 0.7; // Chance for a shot to actually hit (70%)
+        // Removed spaceship variables:
+        // let spaceship = null;
+        // const spaceshipSpeed = 1.5;
+        // const detectionRange = 200;
+        // const shootChance = 0.01;
+        // const hitChance = 0.7;
 
         let userDestructionCount = 0; // Counter for asteroids destroyed by the user
         let messageShown = false; // Flag to track if the alien message has been shown
@@ -395,6 +405,7 @@
                          showAlienMessage();
                      }
                  }
+                 // AI destruction logic removed
 
                  const numFragments = 4; // How many fragments to create
 
@@ -403,12 +414,12 @@
                 asteroids.splice(index, 1); // Remove 1 element at the found index
 
                 // Create fragments at the destroyed asteroid's position
-                for (let i = 0; i < numFragments; i++) {
+                 for (let i = 0; i < numFragments; i++) {
                     // Create fragment near the original position with small random offset
                      const fragmentX = asteroidDataToDestroy.x + (Math.random() - 0.5) * 15;
                      const fragmentY = asteroidDataToDestroy.y + (Math.random() - 0.5) * 15;
-                    createAsteroid(fragmentX, fragmentY, null, true); // Pass position, null size, and mark as fragment
-                }
+                     createAsteroid(fragmentX, fragmentY, null, true); // Pass position, null size, and mark as fragment
+                 }
             }
         }
 
@@ -419,7 +430,7 @@
             const asteroidDataToDestroy = asteroids.find(a => a.element === clickedElement);
 
             if (asteroidDataToDestroy) {
-               destroyAsteroid(asteroidDataToDestroy, 'user'); // Pass 'user' source
+                destroyAsteroid(asteroidDataToDestroy, 'user'); // Pass 'user' source
             }
         }
 
@@ -466,77 +477,66 @@
             asteroidField.appendChild(asteroid);
         }
 
-        // Function to initialize the AI spaceship
+        // Removed function to initialize the AI spaceship
+        /*
         function initializeAI() {
-            if (spaceship) {
-                // Remove existing spaceship element if it exists
-                spaceship.element.remove();
-                spaceship = null;
-            }
+             if (spaceship) {
+                 // Remove existing spaceship element if it exists
+                 spaceship.element.remove();
+                 spaceship = null;
+             }
 
-            const spaceshipElement = document.createElement('div');
-            spaceshipElement.classList.add('spaceship');
-            spaceshipElement.textContent = '^'; // Spaceship character
+             const spaceshipElement = document.createElement('div');
+             spaceshipElement.classList.add('spaceship');
+             spaceshipElement.textContent = '^'; // Spaceship character
 
-            spaceship = {
-                element: spaceshipElement,
-                x: window.innerWidth / 2, // Start in the center
-                y: window.innerHeight / 2,
-                vx: 0,
-                vy: 0,
-                rotation: 0, // Rotation in degrees
-                targetX: Math.random() * window.innerWidth, // Initial target is random
-                targetY: Math.random() * window.innerHeight,
-                shootTimer: Math.random() * 60 + 60 // Frames until next possible shot (1-2 seconds)
-            };
+             spaceship = {
+                 element: spaceshipElement,
+                 x: window.innerWidth / 2, // Start in the center
+                 y: window.innerHeight / 2,
+                 vx: 0,
+                 vy: 0,
+                 rotation: 0, // Rotation in degrees
+                 targetX: Math.random() * window.innerWidth, // Initial target is random
+                 targetY: Math.random() * window.innerHeight,
+                 shootTimer: Math.random() * 60 + 60 // Frames until next possible shot (1-2 seconds)
+             };
 
-            spaceshipElement.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
+             spaceshipElement.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
 
-            asteroidField.appendChild(spaceshipElement);
+             asteroidField.appendChild(spaceshipElement);
         }
+        */
 
 
         // Function to initialize the asteroid field with the original set
         function initializeAsteroidField() {
-             // Remove existing asteroids from DOM
-             // Iterate backwards as we are removing elements
-             for (let i = asteroids.length - 1; i >= 0; i--) {
-                 asteroids[i].element.remove();
-             }
+              // Remove existing asteroids from DOM
+              // Iterate backwards as we are removing elements
+              for (let i = asteroids.length - 1; i >= 0; i--) {
+                  asteroids[i].element.remove();
+              }
 
-             // Clear the asteroids array
-             asteroids = [];
+              // Clear the asteroids array
+              asteroids = [];
 
-             // Create the initial set of asteroids
-             for (let i = 0; i < numAsteroids; i++) {
-                 createAsteroid(); // Call with no arguments for random position/size
-             }
+              // Create the initial set of asteroids
+              for (let i = 0; i < numAsteroids; i++) {
+                  createAsteroid(); // Call with no arguments for random position/size
+              }
         }
 
         // Function to set up the entire background scene and game state
         function initializeGame() {
             initializeAsteroidField();
-            initializeAI();
+            // Removed initializeAI();
             userDestructionCount = 0; // Reset user score
             messageShown = false; // Reset message flag
              // Remove any existing message div
              const existingMessage = document.getElementById('alien-message');
              if(existingMessage) {
-                 existingMessage.remove();
+                  existingMessage.remove();
              }
-             // Re-lock the buttons on reset
-             const buttonsToLock = document.querySelectorAll('.try-button, .download-button:not(.coming-soon)');
-             buttonsToLock.forEach(button => {
-                 button.classList.add('locked-button');
-             });
-             // Attempt to load ads on reset/initial load
-              if (window.adsbygoogle && window.adsbygoogle.push) {
-                   console.log("Attempting AdSense push on init...");
-                  // This push outside the click handler is often needed for initial ad loads
-                   (adsbygoogle = window.adsbygoogle || []).push({});
-              } else {
-                   console.log("AdSense push failed on init: window.adsbygoogle not ready.");
-              }
         }
 
 
@@ -547,7 +547,7 @@
             const deltaFactor = deltaTime / 16.67; // Normalize movement speed (approx 60fps)
 
             // --- Animate Asteroids ---
-            // Iterate backwards as asteroids might be removed (by AI or user click during rapid clicks)
+            // Iterate backwards as asteroids might be removed (by user click)
              for (let i = asteroids.length - 1; i >= 0; i--) {
                 const a = asteroids[i];
 
@@ -570,71 +570,69 @@
              }
 
 
-            // --- Animate Spaceship and AI Logic ---
-            if (spaceship) {
-                // Move towards target
-                const dx = spaceship.targetX - spaceship.x;
-                const dy = spaceship.targetY - spaceship.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+             // --- Removed Animate Spaceship and AI Logic ---
+            /*
+             if (spaceship) {
+                 // Move towards target
+                 const dx = spaceship.targetX - spaceship.x;
+                 const dy = spaceship.targetY - spaceship.y;
+                 const distance = Math.sqrt(dx * dx + dy * dy);
 
-                if (distance < 10) { // Reached target, pick new one
-                    spaceship.targetX = Math.random() * window.innerWidth;
-                    spaceship.targetY = Math.random() * window.innerHeight;
-                } else {
-                    // Normalize direction vector and apply speed
-                    spaceship.vx = (dx / distance) * spaceshipSpeed;
-                    spaceship.vy = (dy / distance) * spaceshipSpeed;
+                 if (distance < 10) { // Reached target, pick new one
+                     spaceship.targetX = Math.random() * window.innerWidth;
+                     spaceship.targetY = Math.random() * window.innerHeight;
+                 } else {
+                     // Normalize direction vector and apply speed
+                     spaceship.vx = (dx / distance) * spaceshipSpeed;
+                     spaceship.vy = (dy / distance) * spaceshipSpeed;
 
-                     // Calculate rotation to face direction of movement
-                     spaceship.rotation = Math.atan2(spaceship.vy, spaceship.vx) * 180 / Math.PI + 90; // +90 for character orientation
-                }
+                      // Calculate rotation to face direction of movement
+                      spaceship.rotation = Math.atan2(spaceship.vy, spaceship.vx) * 180 / Math.PI + 90; // +90 for character orientation
+                 }
 
-                // Update position
-                spaceship.x += spaceship.vx * deltaFactor;
-                spaceship.y += spaceship.vy * deltaFactor;
+                 // Update position
+                 spaceship.x += spaceship.vx * deltaFactor;
+                 spaceship.y += spaceship.vy * deltaFactor;
 
-                 // Clamp to screen bounds (or implement wrapping like asteroids if preferred)
-                 // const shipSize = parseFloat(spaceship.element.style.fontSize || 16);
-                 // spaceship.x = Math.max(0, Math.min(window.innerWidth - shipSize, spaceship.x));
-                 // spaceship.y = Math.max(0, Math.min(window.innerHeight - shipSize, spaceship.y));
-                // Simple wrap around for spaceship too
-                if (spaceship.x < -10) spaceship.x = window.innerWidth + 10;
-                if (spaceship.x > window.innerWidth + 10) spaceship.x = -10;
-                if (spaceship.y < -10) spaceship.y = window.innerHeight + 10;
-                if (spaceship.y > window.innerHeight + 10) spaceship.y = -10;
+                  // Simple wrap around for spaceship too
+                  if (spaceship.x < -10) spaceship.x = window.innerWidth + 10;
+                  if (spaceship.x > window.innerWidth + 10) spaceship.x = -10;
+                  if (spaceship.y < -10) spaceship.y = window.innerHeight + 10;
+                  if (spaceship.y > window.innerHeight + 10) spaceship.y = -10;
 
 
-                // Apply style
-                spaceship.element.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
+                 // Apply style
+                 spaceship.element.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
 
 
-                // --- AI Shooting Logic ---
-                spaceship.shootTimer -= deltaFactor;
+                 // --- AI Shooting Logic ---
+                 spaceship.shootTimer -= deltaFactor;
 
-                if (spaceship.shootTimer <= 0 && asteroids.length > 0) {
-                    // Pick a random asteroid to target
-                    const targetAsteroidIndex = Math.floor(Math.random() * asteroids.length);
-                    const targetAsteroid = asteroids[targetAsteroidIndex];
+                 if (spaceship.shootTimer <= 0 && asteroids.length > 0) {
+                     // Pick a random asteroid to target
+                      const targetAsteroidIndex = Math.floor(Math.random() * asteroids.length);
+                      const targetAsteroid = asteroids[targetAsteroidIndex];
 
-                    // Calculate distance to target asteroid
-                    const asteroidDistance = Math.sqrt(Math.pow(spaceship.x - targetAsteroid.x, 2) + Math.pow(spaceship.y - targetAsteroid.y, 2));
+                     // Calculate distance to target asteroid
+                     const asteroidDistance = Math.sqrt(Math.pow(spaceship.x - targetAsteroid.x, 2) + Math.pow(spaceship.y - targetAsteroid.y, 2));
 
-                    // Check if asteroid is within detection range AND roll chance to shoot
-                    // Scale chance by deltaFactor to be frame-rate independent
-                    if (asteroidDistance < detectionRange && Math.random() < shootChance * deltaFactor) {
-                        // Attempt to hit
-                        if (Math.random() < hitChance) {
-                             // Hit! Destroy the asteroid. Pass 'ai' source.
-                             destroyAsteroid(targetAsteroid, 'ai');
-                        }
-                         // Regardless of hit/miss, reset the timer
-                        spaceship.shootTimer = Math.random() * 60 + 30; // Wait 0.5 to 1.5 seconds before next shot attempt
-                    } else if (spaceship.shootTimer <= -120) {
-                        // If no close target for a while, reset timer anyway to avoid long waits
-                         spaceship.shootTimer = Math.random() * 60 + 30;
-                    }
-                }
-            }
+                     // Check if asteroid is within detection range AND roll chance to shoot
+                     // Scale chance by deltaFactor to be frame-rate independent
+                      if (asteroidDistance < detectionRange && Math.random() < shootChance * deltaFactor) {
+                         // Attempt to hit
+                          if (Math.random() < hitChance) {
+                              // Hit! Destroy the asteroid. Pass 'ai' source.
+                              destroyAsteroid(targetAsteroid, 'ai');
+                          }
+                           // Regardless of hit/miss, reset the timer
+                          spaceship.shootTimer = Math.random() * 60 + 30; // Wait 0.5 to 1.5 seconds before next shot attempt
+                      } else if (spaceship.shootTimer <= -120) {
+                          // If no close target for a while, reset timer anyway to avoid long waits
+                           spaceship.shootTimer = Math.random() * 60 + 30;
+                      }
+                 }
+             }
+            */
 
 
             requestAnimationFrame(animate); // Loop the animation
@@ -654,27 +652,30 @@
          window.addEventListener('resize', () => {
              // Basic repositioning - a full re-initialization might be better
              asteroids.forEach(a => {
-                 const size = parseFloat(a.element.style.fontSize || 15);
-                 if(a.x > window.innerWidth - size) a.x = window.innerWidth - size - 10;
-                 if(a.y > window.innerHeight - size) a.y = window.innerHeight - size - 10;
-                 if(a.x < 0) a.x = 10; // Simple bounds check
-                 if(a.y < 0) a.y = 10; // Simple bounds check
-                  // Update transform immediately on resize
-                  a.element.style.transform = `translate(${a.x}px, ${a.y}px) rotate(${a.rotation}deg)`;
+                  const size = parseFloat(a.element.style.fontSize || 15);
+                  if(a.x > window.innerWidth - size) a.x = window.innerWidth - size - 10;
+                  if(a.y > window.innerHeight - size) a.y = window.innerHeight - size - 10;
+                  if(a.x < 0) a.x = 10; // Simple bounds check
+                  if(a.y < 0) a.y = 10; // Simple bounds check
+                   // Update transform immediately on resize
+                   a.element.style.transform = `translate(${a.x}px, ${a.y}px) rotate(${a.rotation}deg)`;
              });
+             // Removed spaceship resize logic
+             /*
               if(spaceship) {
-                 const size = parseFloat(spaceship.element.style.fontSize || 16);
-                 if(spaceship.x > window.innerWidth - size) spaceship.x = window.innerWidth - size - 10;
-                 if(spaceship.y > window.innerHeight - size) spaceship.y = window.innerHeight - size - 10;
-                 if(spaceship.x < 0) spaceship.x = 10; // Simple bounds check
-                 if(spaceship.y < 0) spaceship.y = 10; // Simple bounds check
-                 // Update transform immediately on resize
-                  spaceship.element.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
+                  const size = parseFloat(spaceship.element.style.fontSize || 16);
+                  if(spaceship.x > window.innerWidth - size) spaceship.x = window.innerWidth - size - 10;
+                  if(spaceship.y > window.innerHeight - size) spaceship.y = window.innerHeight - size - 10;
+                  if(spaceship.x < 0) spaceship.x = 10; // Simple bounds check
+                  if(spaceship.y < 0) spaceship.y = 10; // Simple bounds check
+                   // Update transform immediately on resize
+                   spaceship.element.style.transform = `translate(${spaceship.x}px, ${spaceship.y}px) rotate(${spaceship.rotation}deg)`;
 
-                 // Reset AI target on resize
-                 spaceship.targetX = Math.random() * window.innerWidth;
-                 spaceship.targetY = Math.random() * window.innerHeight;
+                   // Reset AI target on resize
+                   spaceship.targetX = Math.random() * window.innerWidth;
+                   spaceship.targetY = Math.random() * window.innerHeight;
               }
+             */
 
              // Reposition message if it's currently shown
              const existingMessage = document.getElementById('alien-message');
@@ -683,52 +684,17 @@
                   existingMessage.style.left = '50%';
                   existingMessage.style.transform = 'translate(-50%, -50%)';
              }
+
+             // Reposition the ad explainer message
+             const adExplainer = document.getElementById('ad-explainer-message');
+             if(adExplainer) {
+                 adExplainer.style.left = '50%';
+                 adExplainer.style.transform = 'translateX(-50%)';
+             }
          });
 
         // Add event listener for key presses
         window.addEventListener('keydown', handleKeyPress);
-
-
-        // --- Add Click Handlers for Buttons to Potentially Trigger Ads ---
-
-        // Select all clickable buttons you want to potentially trigger ads from
-        const adTriggerButtons = document.querySelectorAll('.try-button, .download-button:not(.coming-soon)'); // Exclude coming soon buttons
-
-        adTriggerButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                // Check if the button is currently locked
-                if (button.classList.contains('locked-button')) {
-                    console.log("Locked button clicked. Preventing default and attempting to trigger ad.");
-                    event.preventDefault(); // Prevent navigation/download
-
-                    // --- AdSense Trigger Logic ---
-                    // This calls the AdSense push command. Combined with the ad unit
-                    // code in the body, this tells AdSense there might be an ad
-                    // to load or display.
-                     if (window.adsbygoogle && window.adsbygoogle.push) {
-                          console.log("Attempting AdSense push...");
-                          (adsbygoogle = window.adsbygoogle || []).push({});
-                     } else {
-                          console.log("AdSense push failed: window.adsbygoogle not ready.");
-                     }
-
-
-                    // IMPORTANT: The button WILL REMAIN LOCKED after this click.
-                    // There is no automatic unlock tied to ad completion using
-                    // standard AdSense implementations.
-                    // You would need separate logic to remove the 'locked-button' class
-                    // if you implement an unlock mechanism elsewhere.
-
-
-                } else {
-                    console.log("Unlocked button clicked. Allowing default action.");
-                    // If the button is not locked, allow the default action (navigation/download)
-                    // This happens automatically because we didn't call event.preventDefault() in this branch.
-                }
-            });
-        });
-
-        // --- End of Ad Trigger Button Handlers ---
 
 
         // Initial setup: Create the game scene when the page loads
